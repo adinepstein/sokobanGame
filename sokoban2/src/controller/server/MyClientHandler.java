@@ -14,13 +14,13 @@ import java.util.Observable;
  * @since 25/01/2017
  *
  */
-public class CLI extends Observable implements ClientHandler {
+public class MyClientHandler extends Observable implements ClientHandler {
 
 	private boolean exitFlag;
 	String commandLine;
 	LinkedList<String> params;
 
-	public CLI() {
+	public MyClientHandler() {
 		exitFlag = false;
 		commandLine = "";
 		params = new LinkedList<String>();
@@ -32,7 +32,7 @@ public class CLI extends Observable implements ClientHandler {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inFromClient));
 
 		while (!exitFlag) {
-			writer.write("Please enter a command: ");
+			writer.println("Please enter a command: ");
 			writer.flush();
 			try {
 				commandLine = reader.readLine();
@@ -41,12 +41,11 @@ public class CLI extends Observable implements ClientHandler {
 				params.clear();
 				for (int i = 0; i < arr.length; i++) {
 					params.add(arr[i]);
-					System.out.println(arr[i]);
 				}
 				if (arr[0].equals("exit")) {
 					System.out.println(arr[0]);
 					exitFlag = false;
-					writer.write("bye");
+					writer.println("bye");
 				}
 				setChanged();
 				notifyObservers(params);

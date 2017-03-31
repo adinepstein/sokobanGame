@@ -6,7 +6,7 @@ import java.io.File;
 import java.util.List;
 
 import controller.SokobanController;
-import controller.server.CLI;
+import controller.server.MyClientHandler;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.MyModel;
@@ -31,7 +31,7 @@ public class Main extends Application {
 
 			List<String> args=getParameters().getRaw();
 			if(args.size()>0&&args.get(0).equals("-server")){
-				CLI cli=new CLI();
+				MyClientHandler cli=new MyClientHandler();
 				sc=new SokobanController(myModel, mwc,cli,Integer.parseInt(args.get(1)));
 				cli.addObserver(sc);
 			}
