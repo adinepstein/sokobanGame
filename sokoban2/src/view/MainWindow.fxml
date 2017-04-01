@@ -45,8 +45,17 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <Label fx:id="timeLabel" prefHeight="27.0" prefWidth="48.0" text="Label" textFill="#0c69cd">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
            </children>
       </HBox>
+      
    </bottom>
    <center>
       <SokobanDisplayer fx:id="sd" height="800.0" width="800.0" BorderPane.alignment="CENTER" wallFileName="./resources/images/wall.jpg" boxFileName="./resources/images/box.jpg" targetFileName="./resources/images/target.jpg" characterFileName="./resources/images/player.jpg" floorFileName="./resources/images/floor.jpg"/>

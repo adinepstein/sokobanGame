@@ -2,22 +2,22 @@ package view;
 
 
 
-import java.io.File;
 import java.util.List;
 
 import controller.SokobanController;
 import controller.server.MyClientHandler;
 import javafx.application.Application;
-import javafx.stage.Stage;
-import model.MyModel;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+import model.MyModel;
 
 
 public class Main extends Application {
+	
+	
+	
 
 	@Override
 	public void start(Stage primaryStage) {

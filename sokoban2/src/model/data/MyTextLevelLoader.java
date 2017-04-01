@@ -23,12 +23,14 @@ import model.data.character.Wall;
 public class MyTextLevelLoader implements LevelLoader {
 	Level level;
 
-	public MyTextLevelLoader() {
+	public MyTextLevelLoader(String name) {
 		level=new Level();
+		level.setLevelName(name);
 	}
 
 	@Override
 	public Level loadLevel(InputStream file) throws IOException {
+		
 		InputStreamReader isr= new InputStreamReader(file);
 		BufferedReader bufferedReader=new BufferedReader(isr);
 		String line;

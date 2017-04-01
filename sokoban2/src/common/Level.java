@@ -22,6 +22,10 @@ public class Level implements Serializable {
 	private int height;
 	private int width;
 	private int numOfSteps;
+	private int finishTime;
+	private String playerName;
+	private String LevelName;
+	
 
 	public Level() {
 	 map= new ArrayList<ArrayList<GameCharacters>>();
@@ -67,6 +71,25 @@ public class Level implements Serializable {
 	 */
 	public Point getPlayerPosition() {
 		return playerPosition;
+	}
+	
+	public int getFinishTime() {
+		return finishTime;
+	}
+	public void setFinishTime(int finishTime) {
+		this.finishTime = finishTime;
+	}
+	public String getPlayerName() {
+		return playerName;
+	}
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+	public String getLevelName() {
+		return LevelName;
+	}
+	public void setLevelName(String levelName) {
+		LevelName = levelName;
 	}
 	/**
 	 *
