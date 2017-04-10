@@ -14,12 +14,16 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import model.DB.GameResults;
 
 public class MainWindowController extends Observable implements View, Initializable {
 
@@ -173,5 +177,12 @@ public class MainWindowController extends Observable implements View, Initializa
 
 		}
 	
+	}
+	
+	public void showResults(){
+		TableView<GameResults> levelResults;
+		TableColumn<GameResults,String> playerCol= new TableColumn<GameResults,String>("Player Name");
+		playerCol.setCellValueFactory(new PropertyValueFactory<GameResults,String>("playerName"));
+		
 	}
 }
