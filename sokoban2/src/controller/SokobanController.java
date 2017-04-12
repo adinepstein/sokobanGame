@@ -11,6 +11,9 @@ import controller.command.ExitCommand;
 import controller.command.LoadCommand;
 import controller.command.MoveCommand;
 import controller.command.SaveCommand;
+import controller.command.SearchCommand;
+import controller.command.TopScoreCommand;
+import controller.command.AddDBDataCommand;
 import controller.server.ClientHandler;
 import controller.server.MyServer;
 import controller.server.Server;
@@ -57,10 +60,13 @@ public class SokobanController implements Observer, ControllerInterface {
 		commandMap.put("display", new DisplayCommand(view, model));
 		commandMap.put("load", new LoadCommand(model));
 		commandMap.put("save", new SaveCommand(model));
-		commandMap.put("exit", new ExitCommand(this));
-
+		commandMap.put("exit", new ExitCommand(this,model));
+		commandMap.put("topScore", new TopScoreCommand(model, view));
+		commandMap.put("search", new SearchCommand(model, view));
+		commandMap.put("addData", new AddDBDataCommand(model));
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		try {

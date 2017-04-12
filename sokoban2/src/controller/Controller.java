@@ -10,7 +10,7 @@ public class Controller {
 	private boolean stop;
 
 	public Controller() {
-	bq=new ArrayBlockingQueue<Command>(10);
+	bq=new ArrayBlockingQueue<Command>(20);
 	stop=false;
 }
 

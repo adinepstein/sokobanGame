@@ -12,53 +12,68 @@
 <?import javafx.scene.control.Label?>
 
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102" fx:controller="view.MainWindowController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open" />
-                  <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
-              	<MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
-            </items>
-          </Menu>
-         </menus>
-      </MenuBar>
-   </top>
-   <bottom>
-      <HBox prefHeight="32.0" prefWidth="572.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label prefHeight="27.0" prefWidth="48.0" text="Steps:" textFill="#0c6cd3">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="60.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label fx:id="numOfSteps" prefHeight="27.0" prefWidth="48.0" text="Label" textFill="#0c69cd">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="timeLabel" prefHeight="27.0" prefWidth="48.0" text="Label" textFill="#0c69cd">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-           </children>
-      </HBox>
-      
-   </bottom>
-   <center>
-      <SokobanDisplayer fx:id="sd" height="800.0" width="800.0" BorderPane.alignment="CENTER" wallFileName="./resources/images/wall.jpg" boxFileName="./resources/images/box.jpg" targetFileName="./resources/images/target.jpg" characterFileName="./resources/images/player.jpg" floorFileName="./resources/images/floor.jpg"/>
-   </center>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102"
+	fx:controller="view.MainWindowController">
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#openFile"
+							text="Open" />
+						<MenuItem mnemonicParsing="false" onAction="#saveFile"
+							text="Save" />
+						<MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Top Scores">
+					<items>
+						<MenuItem mnemonicParsing="false" onAction="#showResults"
+							text="Scores" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<bottom>
+		<HBox prefHeight="32.0" prefWidth="572.0" BorderPane.alignment="CENTER">
+			<children>
+				<Label prefHeight="27.0" prefWidth="48.0" text="Steps:"
+					textFill="#0c6cd3">
+					<HBox.margin>
+						<Insets bottom="10.0" left="60.0" right="10.0" top="10.0" />
+					</HBox.margin>
+					<font>
+						<Font size="18.0" />
+					</font>
+				</Label>
+				<Label fx:id="numOfSteps" prefHeight="27.0" prefWidth="48.0"
+					text="Label" textFill="#0c69cd">
+					<HBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</HBox.margin>
+					<font>
+						<Font name="System Bold" size="14.0" />
+					</font>
+				</Label>
+				<Label fx:id="timeLabel" prefHeight="27.0" prefWidth="48.0"
+					text="Label" textFill="#0c69cd">
+					<HBox.margin>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</HBox.margin>
+					<font>
+						<Font name="System Bold" size="14.0" />
+					</font>
+				</Label>
+			</children>
+		</HBox>
+
+	</bottom>
+	<center>
+		<SokobanDisplayer fx:id="sd" height="800.0" width="800.0"
+			BorderPane.alignment="CENTER" wallFileName="./resources/images/wall.jpg"
+			boxFileName="./resources/images/box.jpg" targetFileName="./resources/images/target.jpg"
+			characterFileName="./resources/images/player.jpg" floorFileName="./resources/images/floor.jpg" />
+	</center>
 
 </BorderPane>

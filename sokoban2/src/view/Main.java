@@ -7,10 +7,12 @@ import java.util.List;
 import controller.SokobanController;
 import controller.server.MyClientHandler;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import model.MyModel;
 
 
@@ -44,6 +46,15 @@ public class Main extends Application {
 			Scene scene = new Scene(root,600,600);
 			 scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
+			primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+				
+				@Override
+				public void handle(WindowEvent we) {
+					mwc.exit();
+					
+				}
+			});
+			
 			primaryStage.show();
 					} catch(Exception e) {
 			e.printStackTrace();
