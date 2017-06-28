@@ -1,7 +1,8 @@
 package model.data.character;
 
-import java.awt.Point;
 import java.io.Serializable;
+
+import common.Position;
 
 public abstract class GameCharacters implements Serializable {
 	
@@ -14,29 +15,29 @@ public abstract class GameCharacters implements Serializable {
 	 * @param FloorFlag true if the character is standing on floor  
 	 */
 	private static final long serialVersionUID = -238716388797760488L;
-	protected Point position;
+	protected Position position;
 	protected char represent;
 	protected boolean targetFlag;
 	protected boolean floorFlag;
 	public GameCharacters() {
-		position=new Point(0,0);
+		position=new Position(0,0);
 	}
 	public GameCharacters(int x,int y) {
-		position=new Point(x,y);
+		position=new Position(x,y);
 	}
 	/**
 	 * 
 	 * @return the position of character 
 	 */
-	public Point getPosition() {
+	public Position getPosition() {
 		return position;
 	}
 	/**
 	 * 
 	 * @param position sets a new position of the character
 	 */
-	public void setPosition(Point position) {
-		this.position.setLocation(position.getX(), position.getY());
+	public void setPosition(Position position) {
+		this.position.setLocation(position.getRow(), position.getCol());
 	}
 	/**
 	 * 

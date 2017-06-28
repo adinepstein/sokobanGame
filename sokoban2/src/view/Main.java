@@ -14,7 +14,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import model.MyModel;
-
+/*
+ * Adin Epstein 021890876 and Amit Turgeman 204098693
+ */
 
 public class Main extends Application {
 	

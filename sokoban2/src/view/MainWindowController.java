@@ -318,7 +318,7 @@ public class MainWindowController extends Observable implements View, Initializa
 		ToolBar tb = new ToolBar();
 		Label searchLabel = new Label("Search");
 		TextField searchField = new TextField();
-		searchField.setPromptText("level or player");
+		searchField.setPromptText("level or player-then Enter");
 		tb.getItems().addAll(searchLabel, searchField);
 
 		searchField.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -453,6 +453,23 @@ public class MainWindowController extends Observable implements View, Initializa
 				}
 
 			});
+		else{
+			Platform.runLater(new Runnable() {
+
+				@Override
+				public void run() {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Search results");
+					alert.setHeaderText(null);
+					alert.setContentText("No level or Player are named like your request- TRY AGAIN");
+
+					alert.showAndWait();
+				}
+
+			});
+			
+			
+		}
 			
 
 	}

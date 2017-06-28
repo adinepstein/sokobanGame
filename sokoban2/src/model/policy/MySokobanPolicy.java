@@ -3,6 +3,7 @@ package model.policy;
 import java.awt.Point;
 
 import common.Level;
+import common.Position;
 import model.data.Move;
 import model.data.character.Floor;
 import model.data.character.GameCharacters;
@@ -19,7 +20,7 @@ public class MySokobanPolicy extends AbstractMover {
 	private Player player;
 	private GameCharacters characterNext;
 	private GameCharacters characterNextNext;
-	private Point playerPos;
+	private Position playerPos;
 	private int xPlayer;
 	private int yPlayer;
 	private int xNext;
@@ -34,8 +35,8 @@ public class MySokobanPolicy extends AbstractMover {
 
 private void findCharNext(String choice){
 	playerPos=level.getPlayerPosition();
-	xPlayer=(int)playerPos.getX();
-	yPlayer=(int)playerPos.getY();
+	xPlayer=(int)playerPos.getRow();
+	yPlayer=(int)playerPos.getCol();
 	player=(Player)level.getMap().get(xPlayer).get(yPlayer);
 	choice=choice.toUpperCase();
 	switch(choice){

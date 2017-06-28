@@ -3,6 +3,7 @@ package model.data;
 import java.awt.Point;
 
 import common.Level;
+import common.Position;
 import model.data.character.Floor;
 import model.data.character.GameCharacters;
 import model.data.character.Player;
@@ -16,15 +17,15 @@ import model.data.character.Target;
  */
 public class Move {
 	private Level level;
-	private Point playerPos;
+	private Position playerPos;
 	private int xPlayer;
 	private int yPlayer;
 
 	public Move(Level level) {
 		this.level=level;
 		playerPos=level.getPlayerPosition();
-		xPlayer=(int)playerPos.getX();
-		yPlayer=(int)playerPos.getY();
+		xPlayer=playerPos.getRow();
+		yPlayer=playerPos.getCol();
 		//level.getMap().get(xPlayer).get(yPlayer);
 	}
 	/**
@@ -35,10 +36,10 @@ public class Move {
 	public void push(GameCharacters characterNext, GameCharacters characterNextNext){
 		boolean floorNextNext=characterNextNext.isFloorFlag();
 		boolean floorNext=characterNext.isFloorFlag();
-		int xNext=(int)characterNext.getPosition().getX();
-		int yNext=(int)characterNext.getPosition().getY();
-		int xNextNext=(int)characterNextNext.getPosition().getX();
-		int yNextNext=(int)characterNextNext.getPosition().getY();
+		int xNext=(int)characterNext.getPosition().getRow();
+		int yNext=(int)characterNext.getPosition().getCol();
+		int xNextNext=(int)characterNextNext.getPosition().getRow();
+		int yNextNext=(int)characterNextNext.getPosition().getCol();
 
 		characterNext.setPosition(characterNextNext.getPosition());
 		characterNext.setFloorFlag(floorNextNext);
@@ -64,10 +65,10 @@ public class Move {
 	public void move(Player player, GameCharacters characterNext){
 		boolean floorNext=characterNext.isFloorFlag();
 		boolean floorPrev=player.isFloorFlag();
-		int xPlayer=(int)player.getPosition().getX();
-		int yPlayer=(int)player.getPosition().getY();
-		int xNext=(int)characterNext.getPosition().getX();
-		int yNext=(int)characterNext.getPosition().getY();
+		int xPlayer=player.getPosition().getRow();
+		int yPlayer=player.getPosition().getCol();
+		int xNext=characterNext.getPosition().getRow();
+		int yNext=characterNext.getPosition().getCol();
 
 		player.setPosition(characterNext.getPosition());
 		player.setFloorFlag(floorNext);
